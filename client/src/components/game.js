@@ -5,8 +5,9 @@ const Game = (props) => {
 
     const [questions, setQuestions] = useState([]);
 
+    //make sure to have the backend server be consistent 
     const loadData = () => {
-        fetch('http://localhost:5000/api/game')
+        fetch('http://localhost:6000/api/game')
             .then((response) => response.json())
             .then(data => {
                 console.log("This is line 11", data.results);
