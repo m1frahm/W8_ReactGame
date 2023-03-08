@@ -7,7 +7,7 @@ import fetch from "node-fetch";
 import fakedata from "./fakedata.js";
 
 const app = express();
-const PORT = 5000; // changing server to 6000 
+const PORT = 5000; // changing server to 6000
 
 // Configuring cors middleware
 app.use(cors());
@@ -47,17 +47,18 @@ app.get("/quizgame", (req, res) => {
   const quiz = req.query.quizGame; // quizGame could be changed and is simply "q" key in postman
   //console.log(quiz);
   //const apiKey = process.env.API_KEY;
-  const params = new URLSearchParams({ 
-      amount: 5,
-      category: 22,
-      difficulty: "easy",
-      type: boolean
-  //   q: city, not relevant
-  //   appid: apiKey, not relevant
-  //   units: "Metric", not relevant
-   });
+  const params = new URLSearchParams({
+    amount: 5,
+    token: process.env.token,
+    category: 22,
+    difficulty: "easy",
+    type: boolean,
+    //   q: city, not relevant
+    //   appid: apiKey, not relevant
+    //   units: "Metric", not relevant
+  });
   //const url = `https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean`
-  const url = `https://opentdb.com/api.php${params}`;
+  const url = `https://opentdb.com/api.php?${params}`;
 
   //const url = `https://api.openweathermap.org/data/2.5/weather?${params}`; // we only need to use line 27 or 28 - both are same way of showing url
   //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`
