@@ -6,11 +6,11 @@ const Game = (props) => {
 
   //make sure to have the backend server be consistent
   const loadData = () => {
-    fetch("http://localhost:5000/api/game")
+    fetch("http://localhost:5000/quizgame")
       .then((response) => response.json())
       .then((data) => {
-        console.log("This is line 11", data.results);
-        setQuestions(data.results);
+        console.log("This is line 11", data.data);
+        setQuestions(data.data);
       });
   };
 

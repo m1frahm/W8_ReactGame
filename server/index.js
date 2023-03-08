@@ -52,7 +52,7 @@ app.get("/quizgame", (req, res) => {
     token: process.env.token,
     category: 22,
     difficulty: "easy",
-    type: boolean,
+    type: "boolean"
     //   q: city, not relevant
     //   appid: apiKey, not relevant
     //   units: "Metric", not relevant
@@ -66,10 +66,9 @@ app.get("/quizgame", (req, res) => {
 
   fetch(url) // this line fetches data from triviaGame API (url we made above)
     .then((res) => res.json()) //comes back as a response in my server and then converts it to json
-    .then((data) => {
-      // this line returns the data back
-      console.log(data);
-      res.send({ data }); //use data and send back to react (client)
+    .then((data) => {// this line returns the data back
+      console.log(data.results);
+      res.send({ data:data.results }); //use data and send back to react (client)
     })
     .catch((err) => {
       // .catch is a way to catch error (on a promise)
