@@ -49,16 +49,20 @@ app.get("/quizgame", (req, res) => {
   //const apiKey = process.env.API_KEY;
   const params = new URLSearchParams({
     amount: 5,
-    token: process.env.token,
+    //token: process.env.TOKEN,
+    //token: "a62a3a84c7c73f08be9655eb463ed5e30e4fccb82c37b9bf534ba924a2b93640",
     category: 22,
     difficulty: "easy",
-    type: "boolean"
+    type: "boolean",
     //   q: city, not relevant
     //   appid: apiKey, not relevant
     //   units: "Metric", not relevant
   });
+  console.log(params);
   //const url = `https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean`
   const url = `https://opentdb.com/api.php?${params}`;
+  //console.log(url);
+  //const url = `https://opentdb.com/api.php?amount=5&token=a62a3a84c7c73f08be9655eb463ed5e30e4fccb82c37b9bf534ba924a2b93640&category=22&difficulty=easy&type=boolean`;
 
   //const url = `https://api.openweathermap.org/data/2.5/weather?${params}`; // we only need to use line 27 or 28 - both are same way of showing url
   //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`
@@ -66,9 +70,10 @@ app.get("/quizgame", (req, res) => {
 
   fetch(url) // this line fetches data from triviaGame API (url we made above)
     .then((res) => res.json()) //comes back as a response in my server and then converts it to json
-    .then((data) => {// this line returns the data back
+    .then((data) => {
+      // this line returns the data back
       console.log(data.results);
-      res.send({ data:data.results }); //use data and send back to react (client)
+      res.send({ data: data.results }); //use data and send back to react (client)
     })
     .catch((err) => {
       // .catch is a way to catch error (on a promise)
