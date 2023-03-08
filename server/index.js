@@ -30,17 +30,17 @@ app.get("/", (req, res) => {
 // })
 
 //on back-end we are
-app.get("/api/game", async (req, res) => {
-  try {
-    const URL =
-      "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=boolean";
-    const apiRequest = await fetch(URL);
-    const questions = await apiRequest.json();
-    res.send({ questions });
-  } catch (err) {
-    console.log(err);
-  }
-});
+// app.get("/api/game", async (req, res) => {
+//   try {
+//     const URL =
+//       "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=boolean";
+//     const apiRequest = await fetch(URL);
+//     const questions = await apiRequest.json();
+//     res.send({ questions });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
 
 // creates an endpoint for the route /api/weather // endpoint is the weather endpoint (this is the invoice)
 app.get("/quizgame", (req, res) => {
