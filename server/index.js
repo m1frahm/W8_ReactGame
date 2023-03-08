@@ -30,17 +30,6 @@ app.get("/", (req, res) => {
 // })
 
 //on back-end we are
-// app.get("/api/game", async (req, res) => {
-//   try {
-//     const URL = "https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean";
-//     const apiRequest = await fetch(URL); //awaiting data that will come back once our http request (get) goes to endpoint which is inside URL
-//     const questions = await apiRequest.json(); // takes data from json format and converts into object
-//     res.send( questions ); //renders the questions onto my local host
-//   } catch (err) {
-//     console.log(err);
-//   }
-// });
-
 app.get("/api/game", async (req, res) => {
   try {
     const URL =
@@ -53,6 +42,39 @@ app.get("/api/game", async (req, res) => {
   }
 });
 
+// creates an endpoint for the route /api/weather // endpoint is the weather endpoint (this is the invoice)
+app.get("/quizgame", (req, res) => {
+  const quiz = req.query.quizGame; // quizGame could be changed and is simply "q" key in postman
+  //console.log(quiz);
+  //const apiKey = process.env.API_KEY;
+  const params = new URLSearchParams({ 
+      amount: 5,
+      category: 22,
+      difficulty: "easy",
+      type: boolean
+  //   q: city, not relevant
+  //   appid: apiKey, not relevant
+  //   units: "Metric", not relevant
+   });
+  //const url = `https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean`
+  const url = `https://opentdb.com/api.php${params}`;
+
+  //const url = `https://api.openweathermap.org/data/2.5/weather?${params}`; // we only need to use line 27 or 28 - both are same way of showing url
+  //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`
+  //console.log(url);
+
+  fetch(url) // this line fetches data from triviaGame API (url we made above)
+    .then((res) => res.json()) //comes back as a response in my server and then converts it to json
+    .then((data) => {
+      // this line returns the data back
+      console.log(data);
+      res.send({ data }); //use data and send back to react (client)
+    })
+    .catch((err) => {
+      // .catch is a way to catch error (on a promise)
+      console.log(err);
+    });
+});
 
 app.listen(PORT, () =>
   console.log(`Sup! Server running on Port http://localhost:${PORT}`)
