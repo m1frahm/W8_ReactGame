@@ -1,58 +1,58 @@
-// File to save one response for the API so I can use it to hardcode if I need it
-// and don't saturate the API call
+// // File to save one response for the API so I can use it to hardcode if I need it
+// // and don't saturate the API call
 
-//API url = https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean
-//5 question, easy, true/false, sciece & nature, default encoding
+// //API url = https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean
+// //5 question, easy, true/false, sciece & nature, default encoding
 
-// const realdata = {
-//   response_code: 0,
-//   results: [
-//     {
-//       category: "Science & Nature",
-//       type: "boolean",
-//       difficulty: "easy",
-//       question: "Igneous rocks are formed by excessive heat and pressure.",
-//       correct_answer: "False",
-//       incorrect_answers: ["True"],
-//     },
-//     {
-//       category: "Science & Nature",
-//       type: "boolean",
-//       difficulty: "easy",
-//       question: "Salt is 100% composed of Sodium.",
-//       correct_answer: "False",
-//       incorrect_answers: ["True"],
-//     },
-//     {
-//       category: "Science & Nature",
-//       type: "boolean",
-//       difficulty: "easy",
-//       question: "An average human can go two weeks without water.",
-//       correct_answer: "False",
-//       incorrect_answers: ["True"],
-//     },
-//     {
-//       category: "Science & Nature",
-//       type: "boolean",
-//       difficulty: "easy",
-//       question:
-//         "Water always boils at 100&deg;C, 212&deg;F, 373.15K, no matter where you are.",
-//       correct_answer: "False",
-//       incorrect_answers: ["True"],
-//     },
-//     {
-//       category: "Science & Nature",
-//       type: "boolean",
-//       difficulty: "easy",
-//       question:
-//         "Not including false teeth; A human has two sets of teeth in their lifetime.",
-//       correct_answer: "True",
-//       incorrect_answers: ["False"],
-//     },
-//   ],
-// };
+// // const realdata = {
+// //   response_code: 0,
+// //   results: [
+// //     {
+// //       category: "Science & Nature",
+// //       type: "boolean",
+// //       difficulty: "easy",
+// //       question: "Igneous rocks are formed by excessive heat and pressure.",
+// //       correct_answer: "False",
+// //       incorrect_answers: ["True"],
+// //     },
+// //     {
+// //       category: "Science & Nature",
+// //       type: "boolean",
+// //       difficulty: "easy",
+// //       question: "Salt is 100% composed of Sodium.",
+// //       correct_answer: "False",
+// //       incorrect_answers: ["True"],
+// //     },
+// //     {
+// //       category: "Science & Nature",
+// //       type: "boolean",
+// //       difficulty: "easy",
+// //       question: "An average human can go two weeks without water.",
+// //       correct_answer: "False",
+// //       incorrect_answers: ["True"],
+// //     },
+// //     {
+// //       category: "Science & Nature",
+// //       type: "boolean",
+// //       difficulty: "easy",
+// //       question:
+// //         "Water always boils at 100&deg;C, 212&deg;F, 373.15K, no matter where you are.",
+// //       correct_answer: "False",
+// //       incorrect_answers: ["True"],
+// //     },
+// //     {
+// //       category: "Science & Nature",
+// //       type: "boolean",
+// //       difficulty: "easy",
+// //       question:
+// //         "Not including false teeth; A human has two sets of teeth in their lifetime.",
+// //       correct_answer: "True",
+// //       incorrect_answers: ["False"],
+// //     },
+// //   ],
+// // };
 
-//export default realdata;
+// //export default realdata;
 
 //cristina's prior data
 const fakedata = {

@@ -7,7 +7,7 @@ import fetch from "node-fetch";
 import fakedata from "./fakedata.js";
 
 const app = express();
-const PORT = 6000; // changing server to 6000 
+const PORT = 5000; // changing server to 6000 
 
 // Configuring cors middleware
 app.use(cors());
@@ -30,16 +30,29 @@ app.get("/", (req, res) => {
 // })
 
 //on back-end we are
+// app.get("/api/game", async (req, res) => {
+//   try {
+//     const URL = "https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean";
+//     const apiRequest = await fetch(URL); //awaiting data that will come back once our http request (get) goes to endpoint which is inside URL
+//     const questions = await apiRequest.json(); // takes data from json format and converts into object
+//     res.send( questions ); //renders the questions onto my local host
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
+
 app.get("/api/game", async (req, res) => {
   try {
-    const URL = "https://opentdb.com/api.php?amount=5&category=22&difficulty=easy&type=boolean";
-    const apiRequest = await fetch(URL); //awaiting data that will come back once our http request (get) goes to endpoint which is inside URL
-    const questions = await apiRequest.json(); // takes data from json format and converts into object
-    res.send({ questions }); //renders the questions onto my local host
+    const URL =
+      "https://opentdb.com/api.php?amount=10&category=17&difficulty=easy&type=boolean";
+    const apiRequest = await fetch(URL);
+    const questions = await apiRequest.json();
+    res.send({ questions });
   } catch (err) {
     console.log(err);
   }
 });
+
 
 app.listen(PORT, () =>
   console.log(`Sup! Server running on Port http://localhost:${PORT}`)
