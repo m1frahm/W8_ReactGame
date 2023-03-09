@@ -6,6 +6,8 @@ const Score = (props) => {
     // } else {
     //   message = `Welcome to my game`;
     // }
+
+    
     
     return (
       <div> Your score is </div>

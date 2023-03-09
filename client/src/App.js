@@ -1,6 +1,6 @@
 import Header from "./components/header.js";
 import Score from "./components/score.js";
-import UserForm from "./components/user.js";
+import UserForm from "./components/userform.js";
 import Game from "./components/game.js";
 import "./App.css";
 import { useState } from "react";

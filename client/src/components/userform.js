@@ -4,7 +4,7 @@ const UserForm = (props) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // preventing default action of submit event 
     if (!value) return;
     props.grabUser(value);
     console.log(value);

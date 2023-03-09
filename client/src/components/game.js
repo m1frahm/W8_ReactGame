@@ -24,7 +24,7 @@ const Game = (props) => {
         <span>Question 1</span>/{questions.length}
       </div>
       {questions.map((question, index) => {
-        return <QuestionCard key={index} question={question} />;
+        return <QuestionCard key={index} question={question} />; //might need to pass
       })}
     </div>
   );
