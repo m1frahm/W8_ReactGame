@@ -1,10 +1,10 @@
 const Header = (props) => {
 
   let message;
-  if (props.user) {
-    message = `Welcome to my game ${props.user}`;
+  if (props.name) {
+    message = `LET'S BEGIN ${props.name}`;
   } else {
-    message = `Welcome to my game`;
+    message = `LET'S BEGIN`;
   }
   
   return (
