@@ -1,17 +1,17 @@
-const Score = (props) => {
+ import { useState } from "react";
 
-    // let message;
-    // if (props.name) {
-    //   message = `Welcome to my game ${props.name}`;
-    // } else {
-    //   message = `Welcome to my game`;
-    // }
+ const Score = (props) => {
+//   const [count, setCount] = useState(0);
 
-    
-    
+//   const scoreCount = (event) => {
+//     setCount(count += 20);
+
     return (
-      <div> Your score is </div>
-    );
-  };
+    <h1 Your score is />
+     );
+   };
   
-  export default Score;
+   export default Score;
+
+
+// //correct answer, what user picked (state) to store what they clicked
