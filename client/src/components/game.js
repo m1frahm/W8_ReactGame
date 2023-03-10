@@ -3,6 +3,9 @@ import QuestionCard from "./questioncard";
 
 const Game = (props) => {
   const [questions, setQuestions] = useState([]);
+  const [score, setScore] = useState(0);
+
+  
 
   //make sure to have the backend server be consistent
   const loadData = () => {
@@ -24,8 +27,11 @@ const Game = (props) => {
         <span>Question 1</span>/{questions.length}
       </div>
       {questions.map((question, index) => {
-        return <QuestionCard key={index} question={question} />; //might need to pass
+        return <QuestionCard key={index} question={question} setScore={setScore} score={score}/>; //might need to pass
       })}
+      <h1>
+        In a game of 100 points, your current score is {score}/100{" "}
+      </h1>
     </div>
   );
 };
