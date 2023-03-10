@@ -1,5 +1,5 @@
 import Header from "./components/header.js";
-import Score from "./components/score.js";
+//import Score from "./components/score.js";
 import UserForm from "./components/userform.js";
 import Game from "./components/game.js";
 import "./App.css";
@@ -30,7 +30,6 @@ function App() {
       <UserForm grabUser={handleUser} />
       {/* if there is a user, show Game component */}
       {user ? <Game /> : null}
-      <Score />
     </div>
   );
 }
