@@ -30,7 +30,7 @@ const Game = (props) => {
         return <QuestionCard key={index} question={question} setScore={setScore} score={score}/>; //might need to pass
       })}
       <h1>
-        In a game of 100 points, your current score is {score}/100{" "}
+        In a game of 100 points, your current score is {score}/100!{" "}
       </h1>
     </div>
   );
